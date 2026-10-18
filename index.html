@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJlfd32249c0a5bd8225dca7af3510317be"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruta Segura | Mi comunidad</title>
+
+<style>:root {
+    --azul: #163b67;
+    --azul-claro: #eaf3ff;
+    --amarillo: #ffd166;
+    --fondo: #f5f8fc;
+    --texto: #263548;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0px;
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+    background: var(--fondo);
+    line-height: 1.6;
+}
+header {
+    background: var(--azul);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+nav {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.hero {
+    background: var(--verde);
+    padding: 55px 7%;
+    text-align: center;
+}
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--azul);
+    margin-bottom: 10px;
+}
+.hero p {
+    max-width: 650px;
+    margin: 0px auto 24px;
+}
+.boton {
+    display: inline-block;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    background: var(--amarillo);
+    color: rgb(36, 50, 70);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+main {
+    width: min(1050px, 90%);
+    margin: 35px auto;
+}
+section {
+    margin-bottom: 45px;
+    scroll-margin-top: 20px;
+}
+h2 {
+    color: var(--azul);
+}
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+}
+.tarjeta,
+.reporte,
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: rgba(22, 59, 103, 0.063) 0px 3px 12px;
+}
+.icono {
+    font-size: 2rem;
+}
+form {
+    display: grid;
+    gap: 14px;
+}
+label {
+    font-weight: bold;
+}
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(184, 198, 216);
+    border-radius: 7px;
+    font: inherit;
+    background: white;
+}
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+button {
+    font: inherit;
+}
+.formulario-boton {
+    background: var(--azul);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 13px;
+    cursor: pointer;
+}
+.formulario-boton:hover {
+    background: rgb(36, 85, 141);
+}
+.filtros {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+.filtros button {
+    padding: 9px 13px;
+    border: 1px solid rgb(184, 198, 216);
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+}
+.filtros button.activo {
+    background: var(--azul);
+    color: white;
+}
+#listaReportes {
+    display: grid;
+    gap: 14px;
+}
+.reporte h3 {
+    margin-top: 0px;
+    color: var(--azul);
+}
+.etiqueta {
+    display: inline-block;
+    background: var(--azul-claro);
+    padding: 4px 9px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+}
+.vacio {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.nota {
+    font-size: 0.9rem;
+    color: rgb(83, 101, 121);
+}
+footer {
+    background: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 24px;
+}
+@media (max-width: 500px) {
+    header {
+        padding: 18px 5%;
+    }
+    nav {
+        gap: 10px;
+    }
+    main {
+        width: 92%;
+    }
+}</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🚸 Ruta Segura</div>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#reportar">Reportar</a>
+    <a href="#reportes">Reportes</a>
+    <a href="#consejos">Consejos</a>
+    <a href="#Contacto">Contacto</a> 
+  </nav>
+</header>
+
+<div class="hero" id="inicio">
+  <h1>Calles más seguras para todos</h1>
+
+  <p>
+    Ayúdanos a identificar problemas en las calles
+    de nuestra Playa del Carmen. Un reporte puede ser el
+    primer paso para buscar una solución.
+  </p>
+
+  <a class="boton" href="#reportar">
+    Registrar un problema
+  </a>
+</div>
+
+<main>
+
+  <section id="problemas">
+    <h2>¿Qué problemas atendemos?</h2>
+
+    <div class="tarjetas">
+      <article class="tarjeta">
+        <div class="icono">🕳️</div>
+        <h3>Baches</h3>
+        <p>Identificamos calles con daños
+        que dificultan el tránsito.</p>
+      </article>
+
+      <article class="tarjeta">
+        <div class="icono">💡</div>
+        <h3>Alumbrado</h3>
+        <p>Registramos luminarias que no
+        funcionan correctamente.</p>
+      </article>
+
+      <article class="tarjeta">
+        <div class="icono">🚶</div>
+        <h3>Banquetas</h3>
+        <p>Señalamos obstáculos que
+        dificultan el paso peatonal.</p>
+      </article>
+
+      <article class="tarjeta">
+        <div class="icono">🚦</div>
+        <h3>Señalización</h3>
+        <p>Indicamos señales dañadas
+        y cruces que requieren atención.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="reportar">
+    <h2>Registra un problema</h2>
+
+    <p>
+      Describe el problema para que quede
+      documentado en esta página.
+    </p>
+
+    <form id="formulario">
+      <div>
+        <label for="tipo">Tipo de problema</label>
+        <select id="tipo" required="">
+          <option value="">Selecciona una opción</option>
+          <option value="Bache">Bache</option>
+          <option value="Alumbrado">Falta de alumbrado</option>
+          <option value="Banqueta">Banqueta obstruida</option>
+          <option value="Señalización">Señalización dañada</option>
+          <option value="Otro">Otro problema</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="zona">Calle o zona</label>
+        <input id="zona" type="text" placeholder="Ej. Calle principal, cerca del parque" maxlength="100" required="">
+      </div>
+
+      <div>
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" placeholder="Explica qué problema observaste..." maxlength="500" required=""></textarea>
+      </div>
+
+      <button class="formulario-boton" type="submit">
+        Guardar reporte
+      </button>
+
+      <p class="nota">
+        No escribas nombres, teléfonos, domicilios
+        particulares ni otros datos personales.
+      </p>
+    </form>
+  </section>
+
+  <section id="reportes">
+    <h2>Reportes de la comunidad</h2>
+
+    <p>
+      Consulta los problemas registrados en esta demostración.
+    </p>
+
+    <div class="filtros" id="filtros">
+      <button type="button" class="activo" data-filtro="Todos">Todos</button>
+      <button type="button" data-filtro="Bache">Baches</button>
+      <button type="button" data-filtro="Alumbrado">Alumbrado</button>
+      <button type="button" data-filtro="Banqueta">Banquetas</button>
+      <button type="button" data-filtro="Señalización">Señalización</button>
+      <button type="button" data-filtro="Otro">Otros</button>
+    </div>
+
+    <div id="listaReportes" aria-live="polite"></div>
+  </section>
+
+  <section id="consejos">
+    <h2>Consejos de seguridad vial</h2>
+
+    <div class="tarjetas">
+      <article class="tarjeta">
+        <h3>🚶 Para peatones</h3>
+        <p>Utiliza las banquetas cuando estén
+        disponibles y cruza por lugares señalizados.</p>
+      </article>
+
+      <article class="tarjeta">
+        <h3>🚲 Para ciclistas</h3>
+        <p>Respeta las señales de tránsito
+        y mantente atento al entorno.</p>
+      </article>
+
+      <article class="tarjeta">
+        <h3>🏫 Para estudiantes</h3>
+        <p>Camina con precaución cerca de la escuela
+        y avisa a un adulto sobre zonas peligrosas.</p>
+      </article>
+    </div>
+  </section>
+      <article id="Contacto">
+      <h2> Contacto</h2>
+      <p>
+         En esta sección, pondremos un par de organismos a los cuales puedes acudir para escribir un reporte formal acerca de los baches, la falta de alumbrado, la obstrucción de banquetas y los otros problemas mencionados.
+      </p><p>
+        Número para reportar los baches: 984 156 3991 Tomar foto del bache y mandar la ubicación.
+      </p><p>
+        Denuncia ciudadana: 984 320 7059
+      </p><p>
+        Visita algún organismo local el cuál esté a cargo de los baches. Puedes encontrar su ubicación en Google, o en la página de Facebook oficial del Ayuntamiento de Playa del Carmen.
+
+      
+      </p>
+      </article>
+  <section>
+    <h2>¿Por qué es importante?</h2>
+    <p>
+      Ruta Segura busca crear conciencia sobre los
+      riesgos en las calles y organizar información
+      que pueda compartirse con las autoridades
+      responsables para solicitar atención.
+    </p>
+    <p class="nota">
+      Esta página no envía reportes a las autoridades.
+      Por ahora, los registros se guardan solamente
+      en el navegador donde se creó cada reporte.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <strong>Ruta Segura</strong>
+  <p>Por una comunidad más segura y responsable.</p>
+  <small>Proyecto escolar de participación comunitaria.</small>
+</footer>
+
+<script>
+const formulario = document.getElementById("formulario");
+const lista = document.getElementById("listaReportes");
+const botonesFiltro = document.querySelectorAll("[data-filtro]");
+
+const ejemplos = [
+  {
+    tipo: "Bache",
+    zona: "Cerca del parque (ejemplo)",
+    descripcion: "Se observa un bache en la calle.",
+    fecha: "Ejemplo escolar"
+  },
+  {
+    tipo: "Alumbrado",
+    zona: "Calle de la escuela (ejemplo)",
+    descripcion: "Una luminaria necesita revisión.",
+    fecha: "Ejemplo escolar"
+  },
+  {
+    tipo: "Banqueta",
+    zona: "Avenida principal (ejemplo)",
+    descripcion: "Hay obstáculos que dificultan el paso.",
+    fecha: "Ejemplo escolar"
+  }
+];
+
+let reportes = [];
+
+try {
+  reportes = JSON.parse(
+    localStorage.getItem("rutaSeguraReportes") || "[]"
+  );
+
+  if (!Array.isArray(reportes)) reportes = [];
+} catch (error) {
+  reportes = [];
+}
+
+let filtroActual = "Todos";
+
+function guardarReportes() {
+  try {
+    localStorage.setItem(
+      "rutaSeguraReportes",
+      JSON.stringify(reportes)
+    );
+    return true;
+  } catch (error) {
+    alert("No se pudieron guardar los datos en este navegador.");
+    return false;
+  }
+}
+
+function crearElemento(etiqueta, texto, clase) {
+  const elemento = document.createElement(etiqueta);
+  elemento.textContent = texto;
+
+  if (clase) elemento.className = clase;
+
+  return elemento;
+}
+
+function mostrarReportes() {
+  lista.replaceChildren();
+
+  const combinados = [
+    ...reportes,
+    ...ejemplos
+  ];
+
+  const visibles = combinados.filter(reporte =>
+    filtroActual === "Todos" ||
+    reporte.tipo === filtroActual
+  );
+
+  if (visibles.length === 0) {
+    lista.appendChild(
+      crearElemento(
+        "p",
+        "No hay reportes en esta categoría.",
+        "vacio"
+      )
+    );
+    return;
+  }
+
+  visibles.forEach(reporte => {
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "reporte";
+
+    tarjeta.appendChild(
+      crearElemento("h3", reporte.tipo)
+    );
+
+    tarjeta.appendChild(
+      crearElemento("p", "📍 Zona: " + reporte.zona)
+    );
+
+    tarjeta.appendChild(
+      crearElemento("p", reporte.descripcion)
+    );
+
+    tarjeta.appendChild(
+      crearElemento(
+        "span",
+        reporte.fecha,
+        "etiqueta"
+      )
+    );
+
+    lista.appendChild(tarjeta);
+  });
+}
+
+formulario.addEventListener("submit", function(evento) {
+  evento.preventDefault();
+
+  const nuevoReporte = {
+    tipo: document.getElementById("tipo").value,
+    zona: document.getElementById("zona").value.trim(),
+    descripcion:
+      document.getElementById("descripcion").value.trim(),
+    fecha: new Date().toLocaleDateString("es-MX")
+  };
+
+  if (!nuevoReporte.tipo ||
+      !nuevoReporte.zona ||
+      !nuevoReporte.descripcion) {
+    alert("Completa todos los campos.");
+    return;
+  }
+
+  reportes.unshift(nuevoReporte);
+
+  if (!guardarReportes()) {
+    reportes.shift();
+    return;
+  }
+
+  filtroActual = "Todos";
+
+  botonesFiltro.forEach(boton => {
+    boton.classList.toggle(
+      "activo",
+      boton.dataset.filtro === "Todos"
+    );
+  });
+
+  mostrarReportes();
+  formulario.reset();
+
+  alert("Reporte guardado en este navegador.");
+  document.getElementById("reportes").scrollIntoView();
+});
+
+botonesFiltro.forEach(boton => {
+  boton.addEventListener("click", function() {
+    filtroActual = boton.dataset.filtro;
+
+    botonesFiltro.forEach(otro => {
+      otro.classList.toggle("activo", otro === boton);
+    });
+
+    mostrarReportes();
+  });
+});
+
+mostrarReportes();
+</script>
+
+
+
+</body></html>
